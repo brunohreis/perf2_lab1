@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(int argc, char *argv[]){
     if(argc != 2){
-        fprintf(stderr,"the argc should be 2 only!");
+        fprintf(stderr,"the argc should be 2 only!\n");
         return 1;
     }
     FILE *file = fopen(argv[1], "r");
@@ -10,7 +10,9 @@ int main(int argc, char *argv[]){
     }
     char c = fgetc(file);
     while(c != EOF){
-        printf("%c\n", c);
+        if(c >= 32)
+            printf("%c ", c);
+        printf("[%d]\n", c);
         c = fgetc(file);
     }
     fclose(file);

@@ -27,7 +27,7 @@ void copy_file(FILE *in, FILE* out){
 
 int main(int argc, char *argv[]){
     if(argc != 3){
-        fprintf(stderr,"The argc should be 3 only!");
+        fprintf(stderr,"The argc should be 3 only!\n");
         return 1;
     }
     FILE *in = fopen(argv[1], "r");
